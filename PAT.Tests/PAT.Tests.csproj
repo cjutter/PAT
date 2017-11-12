@@ -61,6 +61,20 @@
     <Compile Include="BenefitsCalcTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PAT.Abstractions\PAT.Abstractions.csproj">
+      <Project>{bdc8e4cd-854b-4713-9ff1-652639e8ff59}</Project>
+      <Name>PAT.Abstractions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PAT.Calculators\PAT.Calculators.csproj">
+      <Project>{6363015C-B728-4468-99EE-CB09B13FB2D8}</Project>
+      <Name>PAT.Calculators</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PAT.Tests.IocMock\PAT.Tests.IocMock.csproj">
+      <Project>{6558DE9A-292B-4AC7-B95F-01725E6DF634}</Project>
+      <Name>PAT.Tests.IocMock</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

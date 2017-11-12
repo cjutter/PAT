@@ -69,10 +69,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BenefitsCalculator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PAT.Abstractions\PAT.Abstractions.csproj">
+      <Project>{bdc8e4cd-854b-4713-9ff1-652639e8ff59}</Project>
+      <Name>PAT.Abstractions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PAT.Models\PAT.Models.csproj">
+      <Project>{9BC278F1-91AE-4BC3-A182-3617596FF00A}</Project>
+      <Name>PAT.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PAT.Tests.IocMock\PAT.Tests.IocMock.csproj">
+      <Project>{6558de9a-292b-4ac7-b95f-01725e6df634}</Project>
+      <Name>PAT.Tests.IocMock</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
