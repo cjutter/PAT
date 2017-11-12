@@ -49,6 +49,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Migrations\201711120440379_InitialCreate.cs" />
+    <Compile Include="Migrations\201711120440379_InitialCreate.Designer.cs">
+      <DependentUpon>201711120440379_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711120506564_EmployeeRelationship.cs" />
+    <Compile Include="Migrations\201711120506564_EmployeeRelationship.Designer.cs">
+      <DependentUpon>201711120506564_EmployeeRelationship.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711120509186_EmployeeRelationship1.cs" />
+    <Compile Include="Migrations\201711120509186_EmployeeRelationship1.Designer.cs">
+      <DependentUpon>201711120509186_EmployeeRelationship1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PATDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -61,6 +74,17 @@
       <Project>{4d3d7651-27d2-40ff-ba35-0f382cb2ff23}</Project>
       <Name>PAT.Entities</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201711120440379_InitialCreate.resx">
+      <DependentUpon>201711120440379_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711120506564_EmployeeRelationship.resx">
+      <DependentUpon>201711120506564_EmployeeRelationship.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711120509186_EmployeeRelationship1.resx">
+      <DependentUpon>201711120509186_EmployeeRelationship1.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
