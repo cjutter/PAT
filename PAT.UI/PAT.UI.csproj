@@ -179,6 +179,12 @@
     <Folder Include="Areas\Calculations\Views\Shared\" />
     <Folder Include="Models\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PAT.Models\PAT.Domain.csproj">
+      <Project>{9BC278F1-91AE-4BC3-A182-3617596FF00A}</Project>
+      <Name>PAT.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
