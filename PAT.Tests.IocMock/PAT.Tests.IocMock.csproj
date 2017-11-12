@@ -48,9 +48,9 @@
       <Project>{bdc8e4cd-854b-4713-9ff1-652639e8ff59}</Project>
       <Name>PAT.Abstractions</Name>
     </ProjectReference>
-    <ProjectReference Include="..\PAT.Models\PAT.Models.csproj">
+    <ProjectReference Include="..\PAT.Models\PAT.Domain.csproj">
       <Project>{9bc278f1-91ae-4bc3-a182-3617596ff00a}</Project>
-      <Name>PAT.Models</Name>
+      <Name>PAT.Domain</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

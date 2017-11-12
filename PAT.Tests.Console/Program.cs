@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using PAT.Database;
-using PAT.Models.Employee;
+﻿using PAT.Database;
+using PAT.Entities;
 
 namespace PAT.Tests.Console
 {
@@ -12,9 +7,18 @@ namespace PAT.Tests.Console
     {
         static void Main(string[] args)
         {
-            PATDbContext context = new PATDbContext();
-            var employee = new Employee(123);
-            context.Employees.Add(employee);
+
+            using (var db = new PATDbContext())
+            {
+                var person = new Person()
+                {
+                    FirstName = "John",
+                    LastName = "Doe"
+
+                };
+                db.Persons.Add(person);
+                db.SaveChanges();
+            }
 
         }
     }

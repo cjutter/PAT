@@ -57,13 +57,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PAT.Abstractions\PAT.Abstractions.csproj">
-      <Project>{bdc8e4cd-854b-4713-9ff1-652639e8ff59}</Project>
-      <Name>PAT.Abstractions</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\PAT.Models\PAT.Models.csproj">
-      <Project>{9bc278f1-91ae-4bc3-a182-3617596ff00a}</Project>
-      <Name>PAT.Models</Name>
+    <ProjectReference Include="..\PAT.Entities\PAT.Entities.csproj">
+      <Project>{4d3d7651-27d2-40ff-ba35-0f382cb2ff23}</Project>
+      <Name>PAT.Entities</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

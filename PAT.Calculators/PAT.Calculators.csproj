@@ -80,9 +80,9 @@
       <Project>{bdc8e4cd-854b-4713-9ff1-652639e8ff59}</Project>
       <Name>PAT.Abstractions</Name>
     </ProjectReference>
-    <ProjectReference Include="..\PAT.Models\PAT.Models.csproj">
+    <ProjectReference Include="..\PAT.Models\PAT.Domain.csproj">
       <Project>{9BC278F1-91AE-4BC3-A182-3617596FF00A}</Project>
-      <Name>PAT.Models</Name>
+      <Name>PAT.Domain</Name>
     </ProjectReference>
     <ProjectReference Include="..\PAT.Tests.IocMock\PAT.Tests.IocMock.csproj">
       <Project>{6558de9a-292b-4ac7-b95f-01725e6df634}</Project>
