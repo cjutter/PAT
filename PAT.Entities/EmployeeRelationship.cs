@@ -10,10 +10,10 @@ namespace PAT.Entities
 {
     public class EmployeeRelationship
     {
-        [Key, Column(Order = 0)]
+        [Key,Required, DatabaseGenerated(DatabaseGeneratedOption.None), Column(Order = 0)]
         [ForeignKey("Employee")]
         public int EmployeeId { get; set; }
-        [Key, Column(Order = 1)]
+        [Key, Required, DatabaseGenerated(DatabaseGeneratedOption.None), Column(Order = 1)]
         [ForeignKey("Person")]
         public int PersonId { get; set; }
         [Required]

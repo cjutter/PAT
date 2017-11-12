@@ -10,7 +10,6 @@ namespace PAT.Database.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "PAT.Database.PATDbContext";
         }
 
         protected override void Seed(PAT.Database.PATDbContext context)

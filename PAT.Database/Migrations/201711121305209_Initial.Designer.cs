@@ -7,13 +7,13 @@ namespace PAT.Database.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class EmployeeRelationship : IMigrationMetadata
+    public sealed partial class Initial : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(EmployeeRelationship));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Initial));
         
         string IMigrationMetadata.Id
         {
-            get { return "201711120506564_EmployeeRelationship"; }
+            get { return "201711121305209_Initial"; }
         }
         
         string IMigrationMetadata.Source
