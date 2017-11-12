@@ -7,5 +7,7 @@ namespace PAT.UI.Areas.Calculations.Models
 {
     public class CalculationResultViewModel
     {
+        public string EmployeeName { get; set; }
+        public decimal YearlyPay { get; set; }
     }
 }

@@ -30,6 +30,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -41,7 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Employee\Employee.cs" />
+    <Compile Include="Employee\EmployeeLogic.cs" />
     <Compile Include="Payroll\Payroll.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -50,9 +58,18 @@
       <Project>{bdc8e4cd-854b-4713-9ff1-652639e8ff59}</Project>
       <Name>PAT.Abstractions</Name>
     </ProjectReference>
+    <ProjectReference Include="..\PAT.Database\PAT.Database.csproj">
+      <Project>{c0127b5b-5fbe-4364-b7ee-bc77d40812c0}</Project>
+      <Name>PAT.Database</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PAT.Entities\PAT.Entities.csproj">
+      <Project>{4D3D7651-27D2-40FF-BA35-0F382CB2FF23}</Project>
+      <Name>PAT.Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

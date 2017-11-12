@@ -19,8 +19,8 @@ namespace PAT.UI.Areas.Calculations.Controllers
         public ActionResult CalculationResult(int employeeId)
         {
             var model = new CalculationResultViewModel();
-            var employee = new Employee(employeeId);
-
+            var employee = new EmployeeLogic(employeeId);
+            model.EmployeeName = employee.FullName;
             return PartialView(model);
         }
     }

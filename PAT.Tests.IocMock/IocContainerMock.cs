@@ -14,7 +14,7 @@ namespace PAT.Tests.IocMock
 
         public static IEmployee GetEmployee(int empId)
         {
-            return new Employee(empId);
+            return new EmployeeLogic(empId);
         }
 
         public static IPayroll GetPayroll()

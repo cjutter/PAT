@@ -1,16 +1,23 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using PAT.Abstractions;
+using PAT.Database;
 
 namespace PAT.Models.Employee
 {
-    public class Employee : IEmployee, IPerson
+    public class EmployeeLogic : IEmployee, IPerson
     {
         private int _empId;
+        private Entities.Employee _employee;
 
-        public Employee(int empId)
+        public EmployeeLogic(int empId)
         {
             _empId = empId;
+            using (var db = new PATDbContext())
+            {
+                _employee = db.Employees.FirstOrDefault(e => e.EmpId == empId);
+            }
         }
 
         public List<IPerson> Dependants
@@ -38,6 +45,7 @@ namespace PAT.Models.Employee
                 throw new NotImplementedException();
             }
         }
+        public string FullName => FirstName + " " + LastName;
 
         public bool HasDependants
         {
