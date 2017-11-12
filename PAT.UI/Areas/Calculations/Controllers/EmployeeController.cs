@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace PAT.UI.Controllers
+namespace PAT.UI.Areas.Calculations.Controllers
 {
     public class EmployeeController : Controller
     {
