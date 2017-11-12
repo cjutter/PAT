@@ -131,7 +131,7 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
-    <Content Include="Areas\Calculations\Views\Employee\_ViewStart.cshtml" />
+    <Content Include="Areas\Calculations\Views\BenefitsCalculation\_ViewStart.cshtml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -142,7 +142,9 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Calculations\CalculationsAreaRegistration.cs" />
+    <Compile Include="Areas\Calculations\Controllers\BenefitsCalculationController.cs" />
     <Compile Include="Areas\Calculations\Controllers\EmployeeController.cs" />
+    <Compile Include="Areas\Calculations\Models\EmployeeBenefitsViewModel.cs" />
     <Compile Include="Controllers\ErrorHandlerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -156,7 +158,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Areas\Calculations\Views\Employee\Index.cshtml" />
+    <Content Include="Areas\Calculations\Views\BenefitsCalculation\Index.cshtml" />
     <Content Include="Areas\Calculations\Views\web.config" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\ErrorHandler\Index.cshtml" />
@@ -173,7 +175,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Calculations\Models\" />
     <Folder Include="Areas\Calculations\Views\Shared\" />
     <Folder Include="Models\" />
   </ItemGroup>
