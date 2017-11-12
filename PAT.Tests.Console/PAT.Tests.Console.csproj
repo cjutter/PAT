@@ -4,15 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9BC278F1-91AE-4BC3-A182-3617596FF00A}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{0CAEF4CC-773E-4787-B112-B6EB9A6A5AA6}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PAT.Models</RootNamespace>
-    <AssemblyName>PAT.Models</AssemblyName>
+    <RootNamespace>PAT.Tests.Console</RootNamespace>
+    <AssemblyName>PAT.Tests.Console</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -49,19 +52,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Employee\Employee.cs" />
-    <Compile Include="Payroll\Payroll.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PAT.Abstractions\PAT.Abstractions.csproj">
       <Project>{bdc8e4cd-854b-4713-9ff1-652639e8ff59}</Project>
       <Name>PAT.Abstractions</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
+    <ProjectReference Include="..\PAT.Database\PAT.Database.csproj">
+      <Project>{c0127b5b-5fbe-4364-b7ee-bc77d40812c0}</Project>
+      <Name>PAT.Database</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PAT.Models\PAT.Models.csproj">
+      <Project>{9bc278f1-91ae-4bc3-a182-3617596ff00a}</Project>
+      <Name>PAT.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

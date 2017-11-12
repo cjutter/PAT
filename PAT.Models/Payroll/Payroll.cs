@@ -1,7 +1,7 @@
 using System;
 using PAT.Abstractions;
 
-namespace PAT.Models
+namespace PAT.Models.Payroll
 {
     public class Payroll : IPayroll
     {

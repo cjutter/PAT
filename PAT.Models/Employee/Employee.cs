@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using PAT.Abstractions;
 
-namespace PAT.Models
+namespace PAT.Models.Employee
 {
     public class Employee : IEmployee, IPerson
     {

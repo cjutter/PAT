@@ -1,6 +1,7 @@
 using System;
 using PAT.Abstractions;
 using PAT.Models;
+using PAT.Models.Payroll;
 using PAT.Tests.IocMock;
 
 namespace PAT.Calculators

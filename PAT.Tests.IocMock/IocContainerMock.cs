@@ -1,5 +1,7 @@
 using PAT.Abstractions;
 using PAT.Models;
+using PAT.Models.Employee;
+using PAT.Models.Payroll;
 
 namespace PAT.Tests.IocMock
 {
