@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <body>
-@using (Html.BeginForm())
+@using (Html.BeginForm(null,null,FormMethod.Get, new {id ="calcForm"}))// "CalculationResult", "BenefitsCalculation"))
 {
     <div class="col-sm-8 text-left">
         <h1>Benefits Cost</h1>
@@ -12,12 +12,39 @@
         @Html.LabelFor(m => m.EmployeeId)
         @Html.TextBoxFor(m => m.EmployeeId)
        
-        <button type="submit" class="btn btn-primary">Run Calculation</button>
+        <button id="btnCalculate"  class="btn btn-primary">Run Calculation</button>
         <div>
             @Html.ValidationMessageFor(m => m.EmployeeId)
+        </div>
+        
+        <div id="result" >
+
+
         </div>
 
     </div>
 }
+<script>
+    $('#btnCalculate').on('click', function (evt) {
+        var form = $('#calcForm');
+        var $resultDiv = $('#result');
+        $resultDiv.empty();
+        form.data('validator').resetForm();
+
+        evt.preventDefault();
+        evt.stopPropagation();
+        if (form.valid()) {
+            var url = '@Url.Action("CalculationResult", "BenefitsCalculation",new { employeeId = Model?.EmployeeId ?? 0 })';
+            url = url.replace('0', $('#EmployeeId').val());
+
+            $.get(url, function (data) {
+                $resultDiv.replaceWith(data);
+            });
+        }
+        
+    });
+
+</script>    
+
 </body>
 </html>

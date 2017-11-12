@@ -132,6 +132,7 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Areas\Calculations\Views\BenefitsCalculation\_ViewStart.cshtml" />
+    <Content Include="Areas\Calculations\Views\BenefitsCalculation\CalculationResult.cshtml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -143,7 +144,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Calculations\CalculationsAreaRegistration.cs" />
     <Compile Include="Areas\Calculations\Controllers\BenefitsCalculationController.cs" />
-    <Compile Include="Areas\Calculations\Controllers\EmployeeController.cs" />
+    <Compile Include="Areas\Calculations\Models\CalculationResultViewModel.cs" />
     <Compile Include="Areas\Calculations\Models\EmployeeBenefitsViewModel.cs" />
     <Compile Include="Controllers\ErrorHandlerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
