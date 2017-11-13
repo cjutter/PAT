@@ -59,5 +59,34 @@ namespace PAT.Models
         public Dependent Spouse => _employee.Dependants.FirstOrDefault(s => s.IsSpouse);
 
         public int EmpId => _employee.EmployeeId;
+
+        public decimal BiWeeklyWage
+        {
+            set
+            {
+                if (_employee.Wage != null)
+                {
+                    _employee.Wage.BiWeeklyWage = value;
+                }
+                else
+                {
+                    _employee.Wage = new Wage()
+                    {
+                        BiWeeklyWage = value,
+                        EmployeeId = _employee.EmployeeId
+                    };
+                }
+               
+            }
+        }
+
+        public void Persist()
+        {
+            using (var db = new PATDbContext())
+            {
+                db.Employees.Add(_employee);
+                db.SaveChanges();
+            }
+        }
     }
 }

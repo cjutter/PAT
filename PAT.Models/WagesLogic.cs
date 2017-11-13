@@ -12,12 +12,24 @@ namespace PAT.Models
     {
         private Wage _wage;
 
-        public WagesLogic(int wageId)
+        public WagesLogic(int? wageId)
         {
-            using (var db = new PATDbContext())
+            if (wageId.HasValue)
             {
-                _wage = db.Wages.FirstOrDefault(w => w.EmployeeId == wageId);
+                using (var db = new PATDbContext())
+                {
+                    _wage = db.Wages.FirstOrDefault(w => w.EmployeeId == wageId);
+                }
+            }
+
+            else
+            {
+                _wage = new Wage();
             }
         }
+
+        public decimal BiWeekelyWage { get; set; }
+
+      
     }
 }

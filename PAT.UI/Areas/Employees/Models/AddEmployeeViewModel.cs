@@ -23,7 +23,7 @@ namespace PAT.UI.Areas.Employees.Models
         [DisplayName("Bi-Weekly Wage")]
         [Required(ErrorMessage = "Please enter wage")]
         [Range(1, 999999999.99, ErrorMessage = "Please valid wage between 1 - 999999999.99")]
-        public Wage BiWeeklyWage { get; set; }
+        public Decimal BiWeeklyWage { get; set; }
 
     }
 }

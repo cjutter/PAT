@@ -17,11 +17,18 @@ namespace PAT.UI.Areas.Employees.Controllers
             return View(model);
         }
 
-        public ActionResult PersistEmployee(AddEmployeeViewModel model)
+        [HttpPost]
+        public ActionResult PersistEmployee(AddEmployeeViewModel emp)
         {
-            var employee = new EmployeeLogic(null);
-            //model.EmployeeName = employee.FullName;
-            return PartialView("AddDependents",model);
+            var employee = new EmployeeLogic(null)
+            {
+                FirstName = emp.FirstName,
+                LastName = emp.LastName
+            };
+            var wage = new WagesLogic(null) {BiWeekelyWage = emp.BiWeeklyWage};
+            employee.BiWeeklyWage = wage.BiWeekelyWage;
+            employee.Persist();
+            return View("AddDependents", emp);
         }
     }
 }
