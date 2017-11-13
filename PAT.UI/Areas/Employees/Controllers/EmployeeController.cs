@@ -23,10 +23,11 @@ namespace PAT.UI.Areas.Employees.Controllers
             var employee = new EmployeeLogic(null)
             {
                 FirstName = emp.FirstName,
-                LastName = emp.LastName
+                LastName = emp.LastName,
+                BiWeeklyWage = emp.BiWeeklyWage
             };
-            var wage = new WagesLogic(null) {BiWeekelyWage = emp.BiWeeklyWage};
-            employee.BiWeeklyWage = wage.BiWeekelyWage;
+    
+          
             employee.Persist();
             return View("AddDependents", emp);
         }

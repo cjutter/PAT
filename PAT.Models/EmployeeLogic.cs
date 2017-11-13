@@ -23,6 +23,7 @@ namespace PAT.Models
             else
             {
                 _employee = new Employee();
+                
             }
            
         }
@@ -62,22 +63,7 @@ namespace PAT.Models
 
         public decimal BiWeeklyWage
         {
-            set
-            {
-                if (_employee.Wage != null)
-                {
-                    _employee.Wage.BiWeeklyWage = value;
-                }
-                else
-                {
-                    _employee.Wage = new Wage()
-                    {
-                        BiWeeklyWage = value,
-                        EmployeeId = _employee.EmployeeId
-                    };
-                }
-               
-            }
+            set { _employee.BiWeeklyWage = value; }
         }
 
         public void Persist()

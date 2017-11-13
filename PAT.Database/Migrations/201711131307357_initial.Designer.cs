@@ -13,7 +13,7 @@ namespace PAT.Database.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201711130338265_initial"; }
+            get { return "201711131307357_initial"; }
         }
         
         string IMigrationMetadata.Source

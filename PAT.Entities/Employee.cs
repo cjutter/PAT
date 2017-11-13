@@ -19,21 +19,22 @@ namespace PAT.Entities
         [Microsoft.Build.Framework.Required]
         public string LastName { get; set; }
 
-        
-        public virtual Wage Wage { get; set; }
+        [Required]
+        public decimal BiWeeklyWage { get; set; }
 
-        [ForeignKey("Dependants")]
-        public int? DependantId { get; set; }
         public virtual List<Dependent> Dependants { get; set; }
+
+      
+
 
         //Next iteration
         //public DateTime HireDate { get; set; }
         //public bool IsActive { get; set; }
         //Address etc...
 
-      
 
-      
-    
+
+
+
     }
 }

@@ -15,11 +15,12 @@ namespace PAT.Database.Migrations
                         FirstName = c.String(nullable: false),
                         LastName = c.String(nullable: false),
                         IsSpouse = c.Boolean(nullable: false),
-                        EmployeeId = c.Int(),
+                        DependentEmployeeId = c.Int(),
+                        DependentEmployee_EmployeeId = c.Int(),
                     })
                 .PrimaryKey(t => t.DependantId)
-                .ForeignKey("dbo.Employees", t => t.EmployeeId)
-                .Index(t => t.EmployeeId);
+                .ForeignKey("dbo.Employees", t => t.DependentEmployee_EmployeeId)
+                .Index(t => t.DependentEmployee_EmployeeId);
             
             CreateTable(
                 "dbo.Employees",
@@ -28,31 +29,21 @@ namespace PAT.Database.Migrations
                         EmployeeId = c.Int(nullable: false, identity: true),
                         FirstName = c.String(),
                         LastName = c.String(),
-                        WageId = c.Int(nullable: false),
-                        DependantId = c.Int(),
-                    })
-                .PrimaryKey(t => t.EmployeeId);
-            
-            CreateTable(
-                "dbo.Wages",
-                c => new
-                    {
-                        EmployeeId = c.Int(nullable: false),
                         BiWeeklyWage = c.Decimal(nullable: false, precision: 18, scale: 2),
+                        DependentEmployee_EmployeeId = c.Int(),
                     })
                 .PrimaryKey(t => t.EmployeeId)
-                .ForeignKey("dbo.Employees", t => t.EmployeeId)
-                .Index(t => t.EmployeeId);
+                .ForeignKey("dbo.Employees", t => t.DependentEmployee_EmployeeId)
+                .Index(t => t.DependentEmployee_EmployeeId);
             
         }
         
         public override void Down()
         {
-            DropForeignKey("dbo.Dependents", "EmployeeId", "dbo.Employees");
-            DropForeignKey("dbo.Wages", "EmployeeId", "dbo.Employees");
-            DropIndex("dbo.Wages", new[] { "EmployeeId" });
-            DropIndex("dbo.Dependents", new[] { "EmployeeId" });
-            DropTable("dbo.Wages");
+            DropForeignKey("dbo.Employees", "DependentEmployee_EmployeeId", "dbo.Employees");
+            DropForeignKey("dbo.Dependents", "DependentEmployee_EmployeeId", "dbo.Employees");
+            DropIndex("dbo.Employees", new[] { "DependentEmployee_EmployeeId" });
+            DropIndex("dbo.Dependents", new[] { "DependentEmployee_EmployeeId" });
             DropTable("dbo.Employees");
             DropTable("dbo.Dependents");
         }
