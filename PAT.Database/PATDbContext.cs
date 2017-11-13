@@ -11,8 +11,8 @@ namespace PAT.Database
             
         }
         public DbSet<Employee> Employees { get; set; }
-        public DbSet<Person> Persons { get; set; }
-        public DbSet<EmployeeRelationship> EmployeeRelationships { get; set; }
+        public DbSet<Wage> Wages { get; set; }
+        public DbSet<Dependant> Dependants { get; set; }
     }
- 
+
 }

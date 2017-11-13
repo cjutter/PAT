@@ -12,9 +12,9 @@ namespace PAT.Tests
         public void CalculateCosts()
         {
            // var benefitsCalc = IocContainerMock.GetBenefitsCalculator();
-            var benefitsCalc = new BenefitsCalculator();
-            var employee = IocContainerMock.GetEmployee(0);
-            var result = benefitsCalc.CalculateEmployeeGrossPayAfterBenefitsDeduction(employee);
+            //var benefitsCalc = new BenefitsCalculator();
+            //var employee = IocContainerMock.GetEmployee(0);
+            //var result = benefitsCalc.CalculateEmployeeGrossPayAfterBenefitsDeduction(employee);
         }
     }
 }

@@ -11,13 +11,32 @@ namespace PAT.Entities
     public class Employee
     {
         [Required, Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int EmpId { get; set; }
+        public int EmployeeId { get; set; }
 
         [Microsoft.Build.Framework.Required]
-        [ForeignKey("Person")]
-        public int PersonId { get; set; }
+        public string FirstName { get; set; }
 
-        public virtual Person Person { get; set; }
+        [Microsoft.Build.Framework.Required]
+        public string LastName { get; set; }
+
+        [Microsoft.Build.Framework.Required]
+        [ForeignKey("Wage")]
+        public int WageId { get; set; }
+
+        public virtual Wage Wage { get; set; }
+
+        [ForeignKey("Dependants")]
+        public int? DependantId { get; set; }
+        public virtual List<Dependant> Dependants { get; set; }
+
+        //Next iteration
+        //public DateTime HireDate { get; set; }
+        //public bool IsActive { get; set; }
+        //Address etc...
+
+      
+
+      
     
     }
 }

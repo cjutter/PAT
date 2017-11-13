@@ -8,14 +8,18 @@ using System.Threading.Tasks;
 
 namespace PAT.Entities
 {
-    public class Person
+   public class Wage
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int PersonId { get; set; }
+        [Required, Key]
+        public int WageId { get; set; }
+
         [Microsoft.Build.Framework.Required]
-        public string FirstName { get; set; }
-        [Microsoft.Build.Framework.Required]
-        public string LastName { get; set; }
+        [ForeignKey("Employee")]
+        public int EmployeeId { get; set; }
+
+        public virtual Employee Employee { get; set; }
+
+        [Required]
+        public decimal BiWeeklyWage { get; set; }
     }
 }

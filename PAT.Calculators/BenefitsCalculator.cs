@@ -1,7 +1,7 @@
 using System;
 using PAT.Abstractions;
 using PAT.Models;
-using PAT.Models.Payroll;
+
 using PAT.Tests.IocMock;
 
 namespace PAT.Calculators
@@ -11,8 +11,8 @@ namespace PAT.Calculators
         public ICalculationResult CalculateEmployeeGrossPayAfterBenefitsDeduction(IEmployee employee)
         {
            // var payroll = IocContainerMock.GetPayroll();
-            var payroll = new Payroll();
-            var grossPay = payroll.GetEmployeeGrossPay(employee);
+         //   var payroll = new Payroll();
+         //   var grossPay = payroll.GetEmployeeGrossPay(employee);
             throw new NotImplementedException();
         }
     }
