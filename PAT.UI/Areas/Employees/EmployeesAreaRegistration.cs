@@ -17,7 +17,7 @@ namespace PAT.UI.Areas.Employees
             context.MapRoute(
                 "Employees_default",
                 "Employees/{controller}/{action}/{id}",
-                new { action = "Index", id = UrlParameter.Optional }
+                new { action = "AddEmployee", id = UrlParameter.Optional }
             );
         }
     }

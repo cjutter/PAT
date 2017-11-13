@@ -49,13 +49,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\201711130149486_Initial.cs" />
-    <Compile Include="Migrations\201711130149486_Initial.Designer.cs">
-      <DependentUpon>201711130149486_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201711130255158_Rename.cs" />
-    <Compile Include="Migrations\201711130255158_Rename.Designer.cs">
-      <DependentUpon>201711130255158_Rename.cs</DependentUpon>
+    <Compile Include="Migrations\201711130338265_initial.cs" />
+    <Compile Include="Migrations\201711130338265_initial.Designer.cs">
+      <DependentUpon>201711130338265_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PATDbContext.cs" />
@@ -72,11 +68,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201711130149486_Initial.resx">
-      <DependentUpon>201711130149486_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711130255158_Rename.resx">
-      <DependentUpon>201711130255158_Rename.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201711130338265_initial.resx">
+      <DependentUpon>201711130338265_initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

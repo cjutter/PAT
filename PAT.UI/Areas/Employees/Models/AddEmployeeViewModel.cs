@@ -19,12 +19,11 @@ namespace PAT.UI.Areas.Employees.Models
         public string LastName { get;set; }
 
         public List<Dependent> Dependants { get; set; }
+
+        [DisplayName("Bi-Weekly Wage")]
+        [Required(ErrorMessage = "Please enter wage")]
+        [Range(1, 999999999.99, ErrorMessage = "Please valid wage between 1 - 999999999.99")]
         public Wage BiWeeklyWage { get; set; }
 
-        [DisplayName("Employee ID")]
-        [Range(typeof(int), "0", "10000",ErrorMessage = "Please enter a number between 1-10000")]
-        [Required(ErrorMessage = "Please enter an employee Id")]
-        public int EmployeeID { get; set; }
-    
     }
 }

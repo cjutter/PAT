@@ -11,12 +11,20 @@ namespace PAT.Models
     {
         private Entities.Employee _employee;
 
-        public EmployeeLogic(int empId)
+        public EmployeeLogic(int? empId)
         {
-            using (var db = new PATDbContext())
+            if (empId.HasValue)
             {
-                _employee = db.Employees.FirstOrDefault(e => e.EmployeeId == empId);
+                using (var db = new PATDbContext())
+                {
+                    _employee = db.Employees.FirstOrDefault(e => e.EmployeeId == empId);
+                }
             }
+            else
+            {
+                _employee = new Employee();
+            }
+           
         }
 
         public List<Dependent> Dependants

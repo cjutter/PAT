@@ -10,7 +10,7 @@ namespace PAT.Entities
 {
     public class Employee
     {
-        [Required, Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [Required, Key]
         public int EmployeeId { get; set; }
 
         [Microsoft.Build.Framework.Required]

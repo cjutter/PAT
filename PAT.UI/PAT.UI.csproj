@@ -134,10 +134,9 @@
     <Content Include="Areas\Calculations\Views\BenefitsCalculation\_ViewStart.cshtml" />
     <Content Include="Areas\Calculations\Views\BenefitsCalculation\CalculationResult.cshtml" />
     <Content Include="Areas\Employees\Views\web.config" />
-    <Content Include="Areas\Employees\Views\Employee\AddEmployee.cshtml" />
     <Content Include="Areas\Employees\Views\Employee\_ViewStart.cshtml" />
-    <Content Include="Areas\Employees\Views\Employee\Index.cshtml" />
-    <Content Include="Areas\Employees\Views\Shared\_Dependant.cshtml" />
+    <Content Include="Areas\Employees\Views\Employee\AddEmployee.cshtml" />
+    <Content Include="Areas\Employees\Views\Employee\AddDependents.cshtml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -185,6 +184,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Calculations\Views\Shared\" />
+    <Folder Include="Areas\Employees\Views\Shared\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

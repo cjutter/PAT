@@ -4,12 +4,58 @@
 
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <title>AddEmployee</title>
+    
 </head>
 <body>
-<div>
-    employee
-</div>
+@using (Html.BeginForm(null,null,FormMethod.Get, new {id ="employeeAddForm"}))
+{
+    <div class="col-sm-8 text-left">
+        <h1>Add Employee</h1>
+        <p>Enter employee and optional employee dependant information</p>
+        <hr>
+
+        @Html.LabelFor(m => m.FirstName)
+        @Html.TextBoxFor(m => m.FirstName)
+        <div>
+            @Html.ValidationMessageFor(m => m.FirstName)
+        </div>
+        @Html.LabelFor(m => m.LastName)
+        @Html.TextBoxFor(m => m.LastName)
+        <div>
+            @Html.ValidationMessageFor(m => m.LastName)
+        </div>
+        @Html.LabelFor(m => m.BiWeeklyWage)
+        @Html.TextBoxFor(m => m.BiWeeklyWage)
+        <div>
+            @Html.ValidationMessageFor(m => m.BiWeeklyWage)
+        </div>
+        <button id="btnAdd" class="btn btn-primary">Add Employee</button>
+        <div id="result" >
+
+
+        </div>
+
+    </div>
+}
+    
+<script>
+    $('#btnAdd').on('click', function (evt) {
+        var form = $('#employeeAddForm');
+        var $resultDiv = $('#result');
+        $resultDiv.empty();
+        form.data('validator').resetForm();
+
+        evt.preventDefault();
+        evt.stopPropagation();
+        if (form.valid()) {
+            var url = '@Url.Action("PersistEmployee", "Employee",new { employee = Model})';
+
+            $.get(url, function (data) {
+                $resultDiv.replaceWith(data);
+            });
+        }
+
+    });
+</script>
 </body>
 </html>
