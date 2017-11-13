@@ -19,10 +19,7 @@ namespace PAT.Entities
         [Microsoft.Build.Framework.Required]
         public string LastName { get; set; }
 
-        [Microsoft.Build.Framework.Required]
-        [ForeignKey("Wage")]
-        public int WageId { get; set; }
-        [Required]
+        
         public virtual Wage Wage { get; set; }
 
         [ForeignKey("Dependants")]
