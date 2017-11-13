@@ -10,13 +10,10 @@ namespace PAT.Entities
 {
    public class Wage
     {
-        [Required, Key]
-        public int WageId { get; set; }
-
-        [Microsoft.Build.Framework.Required]
-        [ForeignKey("Employee")]
+        [Key, ForeignKey("Employee")]
         public int EmployeeId { get; set; }
-
+      
+        [Required]
         public virtual Employee Employee { get; set; }
 
         [Required]

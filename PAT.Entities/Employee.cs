@@ -22,12 +22,12 @@ namespace PAT.Entities
         [Microsoft.Build.Framework.Required]
         [ForeignKey("Wage")]
         public int WageId { get; set; }
-
+        [Required]
         public virtual Wage Wage { get; set; }
 
         [ForeignKey("Dependants")]
         public int? DependantId { get; set; }
-        public virtual List<Dependant> Dependants { get; set; }
+        public virtual List<Dependent> Dependants { get; set; }
 
         //Next iteration
         //public DateTime HireDate { get; set; }

@@ -9,9 +9,9 @@ namespace PAT.UI.Areas.Calculations.Models
 {
     public class EmployeeBenefitsViewModel
     {
-        [DisplayName("EmployeeLogic ID")]
+        [DisplayName("Employee ID")]
         [Required]
-        [Range(0,50000, ErrorMessage = "Please enter valid EmployeeLogic ID")]
+        [Range(0,50000, ErrorMessage = "Please enter valid Employee ID")]
         public int EmployeeId { get; set; }
     }
 }

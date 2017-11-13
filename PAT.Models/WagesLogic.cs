@@ -16,7 +16,7 @@ namespace PAT.Models
         {
             using (var db = new PATDbContext())
             {
-                _wage = db.Wages.FirstOrDefault(w => w.WageId == wageId);
+                _wage = db.Wages.FirstOrDefault(w => w.EmployeeId == wageId);
             }
         }
     }

@@ -133,6 +133,11 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Areas\Calculations\Views\BenefitsCalculation\_ViewStart.cshtml" />
     <Content Include="Areas\Calculations\Views\BenefitsCalculation\CalculationResult.cshtml" />
+    <Content Include="Areas\Employees\Views\web.config" />
+    <Content Include="Areas\Employees\Views\Employee\AddEmployee.cshtml" />
+    <Content Include="Areas\Employees\Views\Employee\_ViewStart.cshtml" />
+    <Content Include="Areas\Employees\Views\Employee\Index.cshtml" />
+    <Content Include="Areas\Employees\Views\Shared\_Dependant.cshtml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -146,6 +151,9 @@
     <Compile Include="Areas\Calculations\Controllers\BenefitsCalculationController.cs" />
     <Compile Include="Areas\Calculations\Models\CalculationResultViewModel.cs" />
     <Compile Include="Areas\Calculations\Models\EmployeeBenefitsViewModel.cs" />
+    <Compile Include="Areas\Employees\Controllers\EmployeeController.cs" />
+    <Compile Include="Areas\Employees\EmployeesAreaRegistration.cs" />
+    <Compile Include="Areas\Employees\Models\AddEmployeeViewModel.cs" />
     <Compile Include="Controllers\ErrorHandlerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -180,6 +188,10 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\PAT.Entities\PAT.Entities.csproj">
+      <Project>{4D3D7651-27D2-40FF-BA35-0F382CB2FF23}</Project>
+      <Name>PAT.Entities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PAT.Models\PAT.Domain.csproj">
       <Project>{9BC278F1-91AE-4BC3-A182-3617596FF00A}</Project>
       <Name>PAT.Domain</Name>

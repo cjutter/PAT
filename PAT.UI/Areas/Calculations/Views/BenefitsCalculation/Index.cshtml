@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <body>
-@using (Html.BeginForm(null,null,FormMethod.Get, new {id ="calcForm"}))// "CalculationResult", "BenefitsCalculation"))
+@using (Html.BeginForm(null,null,FormMethod.Get, new {id ="calcForm"}))
 {
     <div class="col-sm-8 text-left">
         <h1>Benefits Cost</h1>
@@ -12,11 +12,11 @@
         @Html.LabelFor(m => m.EmployeeId)
         @Html.TextBoxFor(m => m.EmployeeId)
        
-        <button id="btnCalculate"  class="btn btn-primary">Run Calculation</button>
+      
         <div>
             @Html.ValidationMessageFor(m => m.EmployeeId)
         </div>
-        
+        <button id="btnCalculate"  class="btn btn-primary">Run Calculation</button>
         <div id="result" >
 
 

@@ -19,7 +19,7 @@ namespace PAT.Models
             }
         }
 
-        public List<Dependant> Dependants
+        public List<Dependent> Dependants
         {
             get
             {
@@ -48,7 +48,7 @@ namespace PAT.Models
             set { _employee.LastName = value; }
         }
 
-        public Dependant Spouse => _employee.Dependants.FirstOrDefault(s => s.IsSpouse);
+        public Dependent Spouse => _employee.Dependants.FirstOrDefault(s => s.IsSpouse);
 
         public int EmpId => _employee.EmployeeId;
     }

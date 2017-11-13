@@ -12,7 +12,7 @@ namespace PAT.Database
         }
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Wage> Wages { get; set; }
-        public DbSet<Dependant> Dependants { get; set; }
+        public DbSet<Dependent> Dependents { get; set; }
     }
 
 }

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PAT.Entities
 {
-    public class Dependant
+    public class Dependent
     {
         [Required, Key]
         public int DependantId { get; set; }
@@ -24,9 +24,9 @@ namespace PAT.Entities
         [Required]
         public bool IsSpouse { get; set; }
 
-        [Microsoft.Build.Framework.Required]
+       // [Microsoft.Build.Framework.Required]
         [ForeignKey("Employee")]
-        public int EmployeeId { get; set; }
+        public int? EmployeeId { get; set; }
 
         public virtual Employee Employee { get; set; }
     }
