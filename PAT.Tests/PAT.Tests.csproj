@@ -36,6 +36,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PAT.Abstractions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\PAT.UI\Bin\PAT.Abstractions.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -65,6 +69,10 @@
     <ProjectReference Include="..\PAT.Calculators\PAT.Calculators.csproj">
       <Project>{6363015C-B728-4468-99EE-CB09B13FB2D8}</Project>
       <Name>PAT.Calculators</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PAT.Entities\PAT.Entities.csproj">
+      <Project>{4D3D7651-27D2-40FF-BA35-0F382CB2FF23}</Project>
+      <Name>PAT.Entities</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

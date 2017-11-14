@@ -22,19 +22,12 @@ namespace PAT.Entities
         [Range(1, 9999999999, ErrorMessage = "Can only be between 1 .. 9999999999")]
         public decimal BiWeeklyWage { get; set; }
 
-        public virtual List<Dependent> Dependants { get; set; }
-
-      
-
-
+        public virtual List<Dependent> Dependents { get; set; }
+        
         //Next iteration
         //public DateTime HireDate { get; set; }
         //public bool IsActive { get; set; }
-        //Address etc...
-
-
-
-
+        //
 
     }
 }

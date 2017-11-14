@@ -21,7 +21,7 @@ namespace PAT.Models
                 using (var db = new PATDbContext())
                 {
                     _employee = db.Employees.FirstOrDefault(e => e.EmployeeId == empId);
-                    _employee.Dependants = db.Dependents.Where(d => d.EmployeeId == empId).ToList();
+                    _employee.Dependents = db.Dependents.Where(d => d.EmployeeId == empId).ToList();
                 }
             }
             else
