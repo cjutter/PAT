@@ -49,13 +49,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\201711131307357_initial.cs" />
-    <Compile Include="Migrations\201711131307357_initial.Designer.cs">
-      <DependentUpon>201711131307357_initial.cs</DependentUpon>
+    <Compile Include="Migrations\201711140002316_initial.cs" />
+    <Compile Include="Migrations\201711140002316_initial.Designer.cs">
+      <DependentUpon>201711140002316_initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201711131308464_initial1.cs" />
-    <Compile Include="Migrations\201711131308464_initial1.Designer.cs">
-      <DependentUpon>201711131308464_initial1.cs</DependentUpon>
+    <Compile Include="Migrations\201711140016232_2.cs" />
+    <Compile Include="Migrations\201711140016232_2.Designer.cs">
+      <DependentUpon>201711140016232_2.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PATDbContext.cs" />
@@ -72,11 +72,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201711131307357_initial.resx">
-      <DependentUpon>201711131307357_initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201711140002316_initial.resx">
+      <DependentUpon>201711140002316_initial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711131308464_initial1.resx">
-      <DependentUpon>201711131308464_initial1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201711140016232_2.resx">
+      <DependentUpon>201711140016232_2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

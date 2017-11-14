@@ -13,13 +13,13 @@ namespace PAT.Entities
         [Required, Key]
         public int EmployeeId { get; set; }
 
-        [Microsoft.Build.Framework.Required]
+        [Required]
         public string FirstName { get; set; }
 
-        [Microsoft.Build.Framework.Required]
+        [Required]
         public string LastName { get; set; }
 
-        [Required]
+        [Range(1, 9999999999, ErrorMessage = "Can only be between 1 .. 9999999999")]
         public decimal BiWeeklyWage { get; set; }
 
         public virtual List<Dependent> Dependants { get; set; }

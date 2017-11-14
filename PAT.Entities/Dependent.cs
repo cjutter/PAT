@@ -24,12 +24,5 @@ namespace PAT.Entities
         [Required]
         public bool IsSpouse { get; set; }
 
-
-        [InverseProperty("DependentEmployee")]
-        public int? DependentEmployeeId { get; set; }
-
-      public Employee DependentEmployee { get; set; }
-
-        //public virtual Employee Employee { get; set; }
     }
 }

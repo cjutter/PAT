@@ -23,20 +23,20 @@ namespace PAT.Models
             else
             {
                 _employee = new Employee();
-                
-            }
-           
-        }
 
-        public List<Dependent> Dependants
-        {
-            get
-            {
-                return _employee.Dependants;
             }
 
-            set { _employee.Dependants = value; }
         }
+
+        //public List<Dependent> Dependants
+        //{
+        //    get
+        //    {
+        //        return _employee.Dependants;
+        //    }
+
+        //    set { _employee.Dependants = value; }
+        //}
 
         public string FirstName
         {
@@ -46,10 +46,10 @@ namespace PAT.Models
         }
         public string FullName => FirstName + " " + LastName;
 
-        public bool HasDependants => _employee.Dependants.Any();
+        //public bool HasDependants => _employee.Dependants.Any();
 
-        public bool HasSpouse =>  _employee.Dependants.Any(s => s.IsSpouse); 
-        
+        //public bool HasSpouse =>  _employee.Dependants.Any(s => s.IsSpouse); 
+
         public string LastName
         {
             get { return _employee.LastName; }
@@ -57,22 +57,23 @@ namespace PAT.Models
             set { _employee.LastName = value; }
         }
 
-        public Dependent Spouse => _employee.Dependants.FirstOrDefault(s => s.IsSpouse);
+        //public Dependent Spouse => _employee.Dependants.FirstOrDefault(s => s.IsSpouse);
 
-        public int EmpId => _employee.EmployeeId;
+        //public int EmpId => _employee.EmployeeId;
 
         public decimal BiWeeklyWage
         {
             set { _employee.BiWeeklyWage = value; }
         }
 
-        public void Persist()
+        public int Persist()
         {
             using (var db = new PATDbContext())
             {
                 db.Employees.Add(_employee);
                 db.SaveChanges();
             }
+            return _employee.EmployeeId;
         }
     }
 }

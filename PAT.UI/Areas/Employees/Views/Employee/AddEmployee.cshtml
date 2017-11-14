@@ -29,6 +29,11 @@
         <div>
             @Html.ValidationMessageFor(m => m.BiWeeklyWage)
         </div>
+        <div>
+            @Html.LabelFor(m => m.HasDependents)
+            @Html.CheckBoxFor(m => m.HasDependents)
+        </div>
+      
         <button id="btnAdd" class="btn btn-primary">Add Employee</button>
         <div id="result" >
 

@@ -137,6 +137,7 @@
     <Content Include="Areas\Employees\Views\Employee\_ViewStart.cshtml" />
     <Content Include="Areas\Employees\Views\Employee\AddEmployee.cshtml" />
     <Content Include="Areas\Employees\Views\Employee\AddDependents.cshtml" />
+    <Content Include="Areas\Employees\Views\Employee\EmployeeAdded.cshtml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -152,6 +153,7 @@
     <Compile Include="Areas\Calculations\Models\EmployeeBenefitsViewModel.cs" />
     <Compile Include="Areas\Employees\Controllers\EmployeeController.cs" />
     <Compile Include="Areas\Employees\EmployeesAreaRegistration.cs" />
+    <Compile Include="Areas\Employees\Models\AddDependentViewModel.cs" />
     <Compile Include="Areas\Employees\Models\AddEmployeeViewModel.cs" />
     <Compile Include="Controllers\ErrorHandlerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />

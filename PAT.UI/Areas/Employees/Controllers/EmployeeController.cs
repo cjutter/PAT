@@ -26,10 +26,26 @@ namespace PAT.UI.Areas.Employees.Controllers
                 LastName = emp.LastName,
                 BiWeeklyWage = emp.BiWeeklyWage
             };
-    
-          
-            employee.Persist();
-            return View("AddDependents", emp);
+
+            emp.EmployeeId = employee.Persist();
+
+            if (emp.HasDependents)
+            {
+                var dvm = new AddDependentViewModel(emp.EmployeeId);
+
+                return View("AddDependents", dvm);
+            }
+            else
+            {
+                return View("EmployeeAdded", emp);
+            }
         }
+
+        [HttpPost]
+        public ActionResult PersistDependents(AddEmployeeViewModel emp)
+        {
+          throw new NotImplementedException();
+        }
+
     }
 }

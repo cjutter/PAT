@@ -25,5 +25,10 @@ namespace PAT.UI.Areas.Employees.Models
         [Range(1, 999999999.99, ErrorMessage = "Please valid wage between 1 - 999999999.99")]
         public Decimal BiWeeklyWage { get; set; }
 
+        [DisplayName("Has Dependents")]
+        public bool HasDependents { get; set; }
+
+        public int EmployeeId { get; set; }
+
     }
 }
