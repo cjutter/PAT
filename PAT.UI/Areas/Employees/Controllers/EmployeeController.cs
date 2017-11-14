@@ -31,7 +31,7 @@ namespace PAT.UI.Areas.Employees.Controllers
 
             if (emp.HasDependents)
             {
-                var dvm = new AddDependentViewModel(emp.EmployeeId);
+                var dvm = new AddDependentViewModel {EmployeeId = emp.EmployeeId};
 
                 return View("AddDependents", dvm);
             }
@@ -42,9 +42,10 @@ namespace PAT.UI.Areas.Employees.Controllers
         }
 
         [HttpPost]
-        public ActionResult PersistDependents(AddEmployeeViewModel emp)
+        public ActionResult PersistDependents(List<AddDependentViewModel> dependents)
         {
-          throw new NotImplementedException();
+            var a = dependents;
+            return new EmptyResult();
         }
 
     }

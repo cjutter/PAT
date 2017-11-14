@@ -36,31 +36,9 @@
       
         <button id="btnAdd" class="btn btn-primary">Add Employee</button>
         <div id="result" >
-
-
         </div>
-
     </div>
 }
     
-<script>
-    @*$('#btnAdd').on('click', function (evt) {
-        var form = $('#employeeAddForm');
-        var $resultDiv = $('#result');
-        $resultDiv.empty();
-        form.data('validator').resetForm();
-
-        evt.preventDefault();
-        evt.stopPropagation();
-        if (form.valid()) {
-            var url = '@Url.Action("PersistEmployee", "Employee")';
-
-            $.post(url, function (data) {
-                $resultDiv.replaceWith(data);
-            });
-        }
-
-    });*@
-</script>
 </body>
 </html>

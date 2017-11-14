@@ -9,12 +9,7 @@ namespace PAT.UI.Areas.Employees.Models
 {
     public class AddDependentViewModel
     {
-
-        public AddDependentViewModel(int employeeId)
-        {
-            EmployeeId = employeeId;
-        }
-        public int EmployeeId { get; }
+        public int EmployeeId { get; set; }
 
         [DisplayName("First Name")]
         [Required(AllowEmptyStrings = false, ErrorMessage = "Please enter first name")]

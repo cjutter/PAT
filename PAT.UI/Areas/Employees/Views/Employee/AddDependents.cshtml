@@ -7,7 +7,7 @@
     <title>Add Dependents</title>
 </head>
 <body>
-@using (Html.BeginForm("PersistDependents", "Employee", FormMethod.Post, new {id = "dependentAddForm"}))
+@using (Html.BeginForm(null, null, FormMethod.Post, new {id = "dependentAddForm"}))
 {
     <div class="col-sm-8 text-left">
         <h1>Add Dependents</h1>
@@ -33,24 +33,73 @@
         </div>
       
         <button id="btnAddDependent" class="btn btn-primary" type="button">Add Dependent</button>
-        <button id="btnSaveDependents" class="btn btn-primary">Save Dependents</button>
+        <button id="btnSaveDependents" class="btn btn-primary" type="button">Save Dependents</button>
         <hr/>
-        <span id ="dependentsList" style="display: none" >Dependents Added</span>
+        <span id ="dependentsList" style="display: none" >Dependents Added * Not Saved</span>
+       
     </div>
 }
     
 <script>
-    $("#btnAddDependent").click(function () {
-        var dList = $('#dependentsList');
-        var dListText = $('#dependentsList')["0"].innerHTML;
-        var firstName = $('#FirstName').val();
-        var lastname = $('#LastName').val();
-        if ($('#dependentAddForm').valid()) {
-            dList.css("display", "initial");
-            dListText = dListText + '<br>' + firstName + ' ' + lastname + ' ' +($('#IsSpouse').is(":checked") === true ? 'Spouse' : "Child");
-            dList["0"].innerHTML = $('#dependentsList')["0"].innerHTML = dListText;
-        }
-        console.log(dList.val());
+    $(document).ready(function() {
+        $("#btnAddDependent").click(function() {
+            var dList = $('#dependentsList');
+            var dListText = $('#dependentsList')["0"].innerHTML;
+            var firstName = $('#FirstName').val();
+            var lastName = $('#LastName').val();
+            var isSpouse = $('#IsSpouse').is(":checked");
+           
+            if ($('#dependentAddForm').valid()) {
+                dList.css("display", "initial");
+                dListText = dListText +
+                    '<br>' +
+                    firstName +
+                    ' ' +
+                    lastName +
+                    ' ' +
+                    (isSpouse === true ? 'Spouse' : "Child");
+                dList["0"].innerHTML = $('#dependentsList')["0"].innerHTML = dListText;
+
+                $('#FirstName').val('');
+                $('#LastName').val('');
+                $('#IsSpouse').prop('checked', false);
+
+                var d = 
+                    {
+                        EmployeeId: @Model.EmployeeId,
+                        FirstName: firstName,
+                        LastName: lastName,
+                        IsSpouse: isSpouse
+                    };
+
+                $('<input>').attr({
+                    type: 'hidden',
+                    class: 'dependents',
+                    value: JSON.stringify(d)
+                }).appendTo('form');
+            }
+        });
+
+        $("#btnSaveDependents").click(function () {
+            var dependentsArr = [];
+            $('.dependents').each(function() {
+                dependentsArr.push(JSON.parse(this.value));
+            });
+
+            $.ajax({
+                type: 'POST',
+                contentType:'application/json',
+                dataType: 'json',
+                data: JSON.stringify({'dependents': dependentsArr}),
+                url: '@Url.Action("PersistDependents", "Employee")',
+                success: function() {
+                    
+                },
+                error: function(){
+                
+                }
+            });
+        });
     });
 </script>
 </body>
