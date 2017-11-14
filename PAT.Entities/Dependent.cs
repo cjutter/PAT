@@ -24,5 +24,10 @@ namespace PAT.Entities
         [Required]
         public bool IsSpouse { get; set; }
 
+        [ForeignKey("Employee")]
+        public int EmployeeId { get; set; }
+
+        public virtual Employee Employee { get; set; }
+
     }
 }

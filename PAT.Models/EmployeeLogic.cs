@@ -10,6 +10,7 @@ namespace PAT.Models
     public class EmployeeLogic 
     {
         private Entities.Employee _employee;
+        private List<Dependent> _dependents;
 
         public EmployeeLogic(int? empId)
         {
@@ -23,21 +24,24 @@ namespace PAT.Models
             else
             {
                 _employee = new Employee();
-
+                
             }
-
+            _dependents = new List<Dependent>();
         }
 
-        //public List<Dependent> Dependants
-        //{
-        //    get
-        //    {
-        //        return _employee.Dependants;
-        //    }
-
-        //    set { _employee.Dependants = value; }
-        //}
-
+        public void AddDependent(string firstName,string lastName,bool isSpouse)
+        {
+            var dependent = new Dependent
+            {
+                LastName = lastName,
+                FirstName = firstName,
+                IsSpouse = isSpouse,
+                EmployeeId = _employee.EmployeeId
+            };
+            _dependents.Add(dependent);
+            
+        }
+        
         public string FirstName
         {
             get { return _employee.FirstName; }
@@ -46,20 +50,12 @@ namespace PAT.Models
         }
         public string FullName => FirstName + " " + LastName;
 
-        //public bool HasDependants => _employee.Dependants.Any();
-
-        //public bool HasSpouse =>  _employee.Dependants.Any(s => s.IsSpouse); 
-
         public string LastName
         {
             get { return _employee.LastName; }
 
             set { _employee.LastName = value; }
         }
-
-        //public Dependent Spouse => _employee.Dependants.FirstOrDefault(s => s.IsSpouse);
-
-        //public int EmpId => _employee.EmployeeId;
 
         public decimal BiWeeklyWage
         {
@@ -74,6 +70,15 @@ namespace PAT.Models
                 db.SaveChanges();
             }
             return _employee.EmployeeId;
+        }
+
+        public void PersistDependents()
+        {
+            using (var db = new PATDbContext())
+            {
+                db.Dependents.AddRange(_dependents);
+                db.SaveChanges();
+            }
         }
     }
 }

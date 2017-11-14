@@ -44,8 +44,18 @@ namespace PAT.UI.Areas.Employees.Controllers
         [HttpPost]
         public ActionResult PersistDependents(List<AddDependentViewModel> dependents)
         {
-            var a = dependents;
-            return new EmptyResult();
+            if (dependents == null)
+            {
+                return null;
+            }
+            var empLogic = new EmployeeLogic(dependents.First().EmployeeId);
+            
+            foreach (var dependent in dependents)
+            {
+                    empLogic.AddDependent(dependent.FirstName,dependent.LastName,dependent.IsSpouse);
+            }
+            empLogic.PersistDependents();
+            return null;
         }
 
     }

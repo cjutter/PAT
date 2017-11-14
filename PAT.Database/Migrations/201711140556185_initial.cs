@@ -15,19 +15,19 @@ namespace PAT.Database.Migrations
                         FirstName = c.String(nullable: false),
                         LastName = c.String(nullable: false),
                         IsSpouse = c.Boolean(nullable: false),
-                        Employee_EmployeeId = c.Int(),
+                        EmployeeId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.DependantId)
-                .ForeignKey("dbo.Employees", t => t.Employee_EmployeeId)
-                .Index(t => t.Employee_EmployeeId);
+                .ForeignKey("dbo.Employees", t => t.EmployeeId, cascadeDelete: true)
+                .Index(t => t.EmployeeId);
             
             CreateTable(
                 "dbo.Employees",
                 c => new
                     {
                         EmployeeId = c.Int(nullable: false, identity: true),
-                        FirstName = c.String(),
-                        LastName = c.String(),
+                        FirstName = c.String(nullable: false),
+                        LastName = c.String(nullable: false),
                         BiWeeklyWage = c.Decimal(nullable: false, precision: 18, scale: 2),
                     })
                 .PrimaryKey(t => t.EmployeeId);
@@ -36,8 +36,8 @@ namespace PAT.Database.Migrations
         
         public override void Down()
         {
-            DropForeignKey("dbo.Dependents", "Employee_EmployeeId", "dbo.Employees");
-            DropIndex("dbo.Dependents", new[] { "Employee_EmployeeId" });
+            DropForeignKey("dbo.Dependents", "EmployeeId", "dbo.Employees");
+            DropIndex("dbo.Dependents", new[] { "EmployeeId" });
             DropTable("dbo.Employees");
             DropTable("dbo.Dependents");
         }
