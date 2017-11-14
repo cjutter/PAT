@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using PAT.Abstractions;
+using PAT.Calculators;
 using PAT.Database;
 using PAT.Entities;
 
@@ -14,19 +15,20 @@ namespace PAT.Models
 
         public EmployeeLogic(int? empId)
         {
+            _dependents = new List<Dependent>();
             if (empId.HasValue)
             {
                 using (var db = new PATDbContext())
                 {
                     _employee = db.Employees.FirstOrDefault(e => e.EmployeeId == empId);
+                    _employee.Dependants = db.Dependents.Where(d => d.EmployeeId == empId).ToList();
                 }
             }
             else
             {
                 _employee = new Employee();
-                
             }
-            _dependents = new List<Dependent>();
+            
         }
 
         public void AddDependent(string firstName,string lastName,bool isSpouse)
@@ -62,6 +64,8 @@ namespace PAT.Models
             set { _employee.BiWeeklyWage = value; }
         }
 
+        public decimal YearlyPay => _employee.BiWeeklyWage * 26;
+
         public int Persist()
         {
             using (var db = new PATDbContext())
@@ -79,6 +83,12 @@ namespace PAT.Models
                 db.Dependents.AddRange(_dependents);
                 db.SaveChanges();
             }
+        }
+
+        public ICalculationResult GetBenefitsCalcResult()
+        {
+            var calc = new BenefitsCalculator();
+            return calc.CalculateEmployeeGrossPayAfterBenefitsDeduction(_employee);
         }
     }
 }

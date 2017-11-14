@@ -77,16 +77,12 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PAT.Abstractions\PAT.Abstractions.csproj">
-      <Project>{bdc8e4cd-854b-4713-9ff1-652639e8ff59}</Project>
+      <Project>{e6d573cf-1e4e-435c-844d-f1c34a7a2f8d}</Project>
       <Name>PAT.Abstractions</Name>
     </ProjectReference>
-    <ProjectReference Include="..\PAT.Models\PAT.Domain.csproj">
-      <Project>{9BC278F1-91AE-4BC3-A182-3617596FF00A}</Project>
-      <Name>PAT.Domain</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\PAT.Tests.IocMock\PAT.Tests.IocMock.csproj">
-      <Project>{6558de9a-292b-4ac7-b95f-01725e6df634}</Project>
-      <Name>PAT.Tests.IocMock</Name>
+    <ProjectReference Include="..\PAT.Entities\PAT.Entities.csproj">
+      <Project>{4D3D7651-27D2-40FF-BA35-0F382CB2FF23}</Project>
+      <Name>PAT.Entities</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

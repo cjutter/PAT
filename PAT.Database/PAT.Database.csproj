@@ -53,6 +53,14 @@
     <Compile Include="Migrations\201711140556185_initial.Designer.cs">
       <DependentUpon>201711140556185_initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711140637392_1.cs" />
+    <Compile Include="Migrations\201711140637392_1.Designer.cs">
+      <DependentUpon>201711140637392_1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711140639513_2.cs" />
+    <Compile Include="Migrations\201711140639513_2.Designer.cs">
+      <DependentUpon>201711140639513_2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PATDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -70,6 +78,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201711140556185_initial.resx">
       <DependentUpon>201711140556185_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711140637392_1.resx">
+      <DependentUpon>201711140637392_1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711140639513_2.resx">
+      <DependentUpon>201711140639513_2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

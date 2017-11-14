@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BDC8E4CD-854B-4713-9FF1-652639E8FF59}</ProjectGuid>
+    <ProjectGuid>{E6D573CF-1E4E-435C-844D-F1C34A7A2F8D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>PAT.Abstractions</RootNamespace>
@@ -41,10 +41,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ICalculationResult.cs" />
-    <Compile Include="IEmployee.cs" />
-    <Compile Include="IPayroll.cs" />
-    <Compile Include="IPayrollCalculator.cs" />
-    <Compile Include="IPerson.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

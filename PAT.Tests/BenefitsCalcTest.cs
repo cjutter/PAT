@@ -1,7 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using PAT.Abstractions;
-using PAT.Calculators;
-using PAT.Tests.IocMock;
+
 
 namespace PAT.Tests
 {

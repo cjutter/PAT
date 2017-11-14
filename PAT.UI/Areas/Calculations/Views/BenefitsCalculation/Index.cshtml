@@ -25,25 +25,29 @@
     </div>
 }
 <script>
-    $('#btnCalculate').on('click', function (evt) {
-        var form = $('#calcForm');
-        var $resultDiv = $('#result');
-        $resultDiv.empty();
-        form.data('validator').resetForm();
+    $(document).ready(function() {
+        $('#btnCalculate').on('click',
+            function(evt) {
+                var form = $('#calcForm');
+                var $resultDiv = $('#result');
+                $resultDiv.empty();
+                form.data('validator').resetForm();
 
-        evt.preventDefault();
-        evt.stopPropagation();
-        if (form.valid()) {
-            var url = '@Url.Action("CalculationResult", "BenefitsCalculation",new { employeeId = Model?.EmployeeId ?? 0 })';
-            url = url.replace('0', $('#EmployeeId').val());
+                evt.preventDefault();
+                evt.stopPropagation();
+                if (form.valid()) {
+                    var url =
+                        '@Url.Action("CalculationResult", "BenefitsCalculation", new {employeeId = Model?.EmployeeId ?? 0})';
+                    url = url.replace('0', $('#EmployeeId').val());
 
-            $.get(url, function (data) {
-                $resultDiv.replaceWith(data);
+                    $.get(url,
+                        function(data) {
+                            $resultDiv.replaceWith(data);
+                        });
+                }
+
             });
-        }
-        
     });
-
 </script>    
 
 </body>

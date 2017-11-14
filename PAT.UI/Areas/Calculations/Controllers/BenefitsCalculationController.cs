@@ -15,9 +15,14 @@ namespace PAT.UI.Areas.Calculations.Controllers
         public ActionResult CalculationResult(int employeeId)
         {
             var model = new CalculationResultViewModel();
-            var employee = new EmployeeLogic(employeeId);
-            model.EmployeeName = employee.FullName;
+            var empLogic = new EmployeeLogic(employeeId);
+            var result = empLogic.GetBenefitsCalcResult();
+            model.EmployeeGrossPayAfterBenefitsDeduction = result.Result;
+            model.EmployeeName = empLogic.FullName;
+            model.YearlyPay = empLogic.YearlyPay;
             return PartialView(model);
         }
+
+       
     }
 }

@@ -54,8 +54,12 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PAT.Abstractions\PAT.Abstractions.csproj">
-      <Project>{bdc8e4cd-854b-4713-9ff1-652639e8ff59}</Project>
+      <Project>{E6D573CF-1E4E-435C-844D-F1C34A7A2F8D}</Project>
       <Name>PAT.Abstractions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PAT.Calculators\PAT.Calculators.csproj">
+      <Project>{6363015c-b728-4468-99ee-cb09b13fb2d8}</Project>
+      <Name>PAT.Calculators</Name>
     </ProjectReference>
     <ProjectReference Include="..\PAT.Database\PAT.Database.csproj">
       <Project>{c0127b5b-5fbe-4364-b7ee-bc77d40812c0}</Project>

@@ -1,9 +1,13 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
 namespace PAT.Abstractions
 {
     public interface ICalculationResult
     {
-        decimal EmployeeYearlyGrossPay { get; set; }
-        decimal EmployeeBiWeeklyPay { get; set; }
-        decimal EmployeeGrossPayAfterBenefitsDeduction { get; set; }
+        decimal Result { get; set; }
     }
 }

@@ -1,19 +1,24 @@
 using System;
+using System.Linq;
 using PAT.Abstractions;
-using PAT.Models;
+using PAT.Entities;
 
-using PAT.Tests.IocMock;
 
 namespace PAT.Calculators
 {
-    public class BenefitsCalculator : IPayrollCalculator
+    public class BenefitsCalculator 
     { 
-        public ICalculationResult CalculateEmployeeGrossPayAfterBenefitsDeduction(IEmployee employee)
+        public ICalculationResult CalculateEmployeeGrossPayAfterBenefitsDeduction(Employee emp)
         {
-           // var payroll = IocContainerMock.GetPayroll();
-         //   var payroll = new Payroll();
-         //   var grossPay = payroll.GetEmployeeGrossPay(employee);
-            throw new NotImplementedException();
+            var result = new BenefitsCalcResult();
+            var cost = 2000M + emp.Dependants.Sum(dependent => 500M);
+            result.Result = (emp.BiWeeklyWage * 26) - cost;
+            return result;
         }
+    }
+
+    public class BenefitsCalcResult : ICalculationResult
+    {
+        public decimal Result { get; set; }
     }
 }
